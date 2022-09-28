@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import SearchResults from './pages/SearchResults';
+import { Link, Route } from 'wouter';
+import StaticContext from './context/StaticContext';
+import { GifsContextProvider } from './context/GifsContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StaticContext.Provider 
+      value={
+        {
+          name: 'morenolean',
+          climbingNow: true
+        }
+      }
+    >
+
+      <div className="App">
+        <section className="App-content">
+          <Link to="/">
+            GRIFFY
+          </Link>
+      <GifsContextProvider>
+          <Route
+          component={Home}
+          path="/"
+          />
+
+          <Route
+          component={SearchResults}
+          path="/search/:keyword"
+          />
+
+          <Route
+          component={Detail}
+          path="/gif/:id"
+          />
+      </GifsContextProvider>
+      
+        </section>
+      </div>
+    </StaticContext.Provider>
   );
 }
 

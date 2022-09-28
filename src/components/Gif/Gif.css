@@ -1,0 +1,42 @@
+.Gif {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px;
+    max-height: auto;
+    padding: 5px;
+    box-shadow: 1 1px 3px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    
+}
+
+
+
+.Gif h4 {
+    background: rgba(0,0,0, .3);
+    bottom: 0;
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    
+}
+
+.Gif image {
+    width: 100%;
+    object-fit: contain;
+    vertical-align: top;
+}
+
+.Gif a {
+    font-size: 32px;
+    color: #eee;
+    text-decoration: none;
+    
+}
+
+i {
+    font-size: 50px;
+}
